@@ -1,0 +1,6 @@
+query equipes ($count: Int, $offset: Int) {
+    equipes (count: $count, offset: $offset) {
+        id
+        nom
+    }
+}

@@ -1,0 +1,8 @@
+query joueurs ($count: Int, $offset: Int) {
+    joueurs (count: $count, offset: $offset) {
+        id
+        nom
+        prenom
+        poste
+    }
+}

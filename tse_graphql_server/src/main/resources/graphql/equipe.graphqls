@@ -1,0 +1,4 @@
+type Equipe {
+    id: ID!
+    nom: String!
+}
