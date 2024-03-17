@@ -2,7 +2,7 @@ package org.rygn.first_graphql;
 
 public class Equipe {
 
-	private String id;
+	String id;
     private String nom;
     
 	public String getId() {
@@ -15,6 +15,7 @@ public class Equipe {
 	public String getNom() {
 		return nom;
 	}
+
 	public void setNom(String nom) {
 		this.nom = nom;
 	}

@@ -12,31 +12,19 @@ import org.springframework.graphql.test.tester.GraphQlTester;
 
 @GraphQlTest(EquipeController.class)
 @Import(GraphqlConfiguration.class)
-class FirstGraphqlApplicationTests {
+class EquipesTests {
 
 	@Autowired
     private GraphQlTester graphQlTester;
 	
 	public static String expected(String fileName) throws IOException {
-        Path path = Paths.get("src/test/resources/" + fileName + "_expected_response.json");
+        Path path = Paths.get("src/test/resource/" + fileName + "_expected_response.json");
         return new String(Files.readAllBytes(path));
     }
 
 	@Test
 	public void testEquipes()throws IOException {
 		String documentName = "equipes";
-
-        graphQlTester.documentName(documentName)
-          .variable("count", 1)
-          .variable("offset", 0)
-          .execute()
-          .path("$")
-          .matchesJson(expected(documentName));
-	}
-
-	@Test
-	public void testJoueurs()throws IOException {
-		String documentName = "joueurs";
 
         graphQlTester.documentName(documentName)
           .variable("count", 1)

@@ -32,4 +32,14 @@ public class EquipeController {
     	
         return equipeDao.saveEquipe(equipe);
     }
+
+    @MutationMapping
+    public Equipe editEquipe(@Argument String id, @Argument String nom) {
+    	
+    	Equipe equipe = this.equipeDao.getEquipe(Integer.parseInt(id));
+    	equipe.setId(id);
+        equipe.setNom(nom);
+    	
+        return equipeDao.saveEquipe(equipe);
+    }
 }

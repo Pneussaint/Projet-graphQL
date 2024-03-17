@@ -1,5 +1,6 @@
 type Joueur {
     id: ID!
+    equipe : Equipe
     nom: String!
     prenom: String!
     poste: String

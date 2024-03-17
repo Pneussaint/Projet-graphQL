@@ -8,6 +8,6 @@ type Query {
 # The Root Mutation for the application
 type Mutation {
 
-    writeJoueur(id: String!, nom: String!, prenom: String!, poste: String) : Joueur!
+    writeJoueur(id: String!, nom: String!, prenom: String!, poste: String, equipeId: String) : Joueur!
     writeEquipe(id: String!, nom: String!) : Equipe!
 }

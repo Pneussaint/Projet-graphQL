@@ -7,21 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class GraphqlConfiguration {
-
-	@Bean
-    public JoueurDao joueurDao() {
-        List<Joueur> joueurs = new ArrayList<>();
-        for (int joueurId = 0; joueurId < 10; ++joueurId) {
-            Joueur joueur = new Joueur();
-            joueur.setId("" + joueurId);
-            joueur.setNom("Nom " + joueurId);
-            joueur.setPrenom("Prenom " + joueurId);
-            joueur.setPoste(joueurId % 2 == 0 ? "Attaquant" : "Defenseur");
-            joueurs.add(joueur);
-        }
-        return new JoueurDao(joueurs);
-    }	
+public class GraphqlConfiguration {	
 
 	@Bean
     public EquipeDao equipeDao() {
@@ -34,4 +20,19 @@ public class GraphqlConfiguration {
         }
         return new EquipeDao(equipes);
     }		
+
+	@Bean
+    public JoueurDao joueurDao() {
+        List<Joueur> joueurs = new ArrayList<>();
+        for (int joueurId = 0; joueurId < 10; ++joueurId) {
+            Joueur joueur = new Joueur();
+            joueur.setId("" + joueurId);
+            joueur.setNom("Nom " + joueurId);
+            joueur.setPrenom("Prenom " + joueurId);
+            joueur.setPoste(joueurId % 2 == 0 ? "Attaquant" : "Defenseur");
+            joueur.setEquipe("" + (joueurId));
+            joueurs.add(joueur);
+        }
+        return new JoueurDao(joueurs);
+    }
 }

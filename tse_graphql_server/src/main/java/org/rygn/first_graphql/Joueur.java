@@ -6,6 +6,7 @@ public class Joueur {
     private String nom;
     private String prenom;
     private String poste;
+	String equipeId;
     
 	public String getId() {
 		return id;
@@ -33,5 +34,9 @@ public class Joueur {
 	}
 	public void setPoste(String poste) {
 		this.poste = poste;
+	}
+
+	public void setEquipe(String equipeId) {
+		this.equipeId = equipeId;
 	}
 }

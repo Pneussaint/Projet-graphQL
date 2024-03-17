@@ -4,5 +4,9 @@ query joueurs ($count: Int, $offset: Int) {
         nom
         prenom
         poste
+        equipe{
+            id
+            nom
+        }
     }
 }
